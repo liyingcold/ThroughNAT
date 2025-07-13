@@ -31,14 +31,14 @@ sequenceDiagram
 ```
 #### 20250713单机模拟穿透（无中继转发逻辑）
 ##### 操作步骤
-###### 打开三个终端窗口；
-###### 窗口1：运行服务器 python server.py
-###### 窗口2：运行设备A python device.py
-###### 输入ID：DEVICE_A
-###### 服务器IP：127.0.0.1
-###### 窗口3：运行设备B python device.py
-###### 输入ID：DEVICE_B
-###### 服务器IP：127.0.0.1
+    1、打开三个终端窗口；
+    2、窗口1：运行服务器 python server.py
+    3、窗口2：运行设备A python device.py
+       输入ID：DEVICE_A
+       服务器IP：127.0.0.1
+    4、窗口3：运行设备B python device.py
+       输入ID：DEVICE_B
+       服务器IP：127.0.0.1
 ##### 预期结果
 ###### 设备A输出
     收到对端信息: DEVICE_B
