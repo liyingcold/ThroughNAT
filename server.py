@@ -8,14 +8,15 @@ print("信令服务器启动，端口：9999")
 devices = {}
 
 while True:
-    data , addr = server.recvfrom(1024) #接收客户端消息
+    # 接收客户端消息（recvfrom常用于UDP套接字，最多1024字节）
+    data , addr = server.recvfrom(1024)
 
     try:
-        msg = json.loads(data.decode())
+        msg = json.loads(data.decode())#反序列化，字符串转为python对象
         device_id = msg['id']
 
         if msg['type'] == 'register':
-            #记录设备公网地质（NAT映射后的地址）
+            #记录设备公网地址（NAT映射后的地址）
             devices[device_id] = {
                 'public_addr': addr,#IP,端口
                 'local_addr': msg['local_addr'] #内网地址
